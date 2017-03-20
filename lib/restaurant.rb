@@ -34,8 +34,8 @@ class Restaurant
     restaurants=Array.new
       File.open('restaurants.txt','r'){|file|
         file.each_line {|line|
-          puts line
-          restaurants << line
+          puts line.downcase
+          restaurants << line.downcase
         }
       }
     return restaurants

@@ -54,15 +54,15 @@ class Guide
 
   def find(keyword="")
     puts("Find a restaurant")
-    counter=0
     restaurants = Restaurant.saved_restaurants
+
     key=gets.chomp.downcase
 
-    if restaurants.include?('key')
-      puts "FOUND"
-    else
-      puts "NOT FOUND"
-    end 
+    restaurants.each {|line|
+      if line.include? key
+        puts "FOUND:" +line
+      end 
+    }
   end
 
 
